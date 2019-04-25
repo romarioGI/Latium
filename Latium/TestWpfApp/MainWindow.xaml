@@ -1,0 +1,16 @@
+﻿<Window x:Class="TestWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWpfApp"
+        xmlns:propositionalCalculusTextBox="clr-namespace:PropositionalCalculusTextBox;assembly=PropositionalCalculusTextBox"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <propositionalCalculusTextBox:PropositionalCalculusTextBox x:Name="InferenceTextBox" HorizontalAlignment="Left" Height="326" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="772" IsReadOnly="True" FontSize="20"/>
+        <propositionalCalculusTextBox:PropositionalCalculusTextBox x:Name="InputFormulaTextBox" HorizontalAlignment="Left" Height="68" Margin="10,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="542" FontSize="20"/>
+        <Button x:Name="PushButton" Content="Push" HorizontalAlignment="Left" Margin="557,341,0,0" VerticalAlignment="Top" Width="225" Height="68" Click="PushButton_Click"/>
+
+    </Grid>
+</Window>
