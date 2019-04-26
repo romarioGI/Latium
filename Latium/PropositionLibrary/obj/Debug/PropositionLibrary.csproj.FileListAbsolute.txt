@@ -1,6 +1,0 @@
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionLibrary\bin\Debug\PropositionLibrary.dll
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionLibrary\bin\Debug\PropositionLibrary.pdb
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionLibrary\obj\Debug\PropositionLibrary.csprojAssemblyReference.cache
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionLibrary\obj\Debug\PropositionLibrary.csproj.CoreCompileInputs.cache
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionLibrary\obj\Debug\PropositionLibrary.dll
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionLibrary\obj\Debug\PropositionLibrary.pdb

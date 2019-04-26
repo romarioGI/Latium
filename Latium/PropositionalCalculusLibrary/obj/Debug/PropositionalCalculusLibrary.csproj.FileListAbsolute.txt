@@ -1,9 +1,0 @@
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionalCalculusLibrary\bin\Debug\PropositionalCalculusLibrary.dll
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionalCalculusLibrary\bin\Debug\PropositionalCalculusLibrary.pdb
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionalCalculusLibrary\obj\Debug\PropositionalCalculusLibrary.csprojAssemblyReference.cache
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionalCalculusLibrary\obj\Debug\PropositionalCalculusLibrary.csproj.CoreCompileInputs.cache
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionalCalculusLibrary\obj\Debug\PropositionalCalculusLibrary.dll
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionalCalculusLibrary\obj\Debug\PropositionalCalculusLibrary.pdb
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionalCalculusLibrary\obj\Debug\PropositionalCalculusLibrary.csproj.CopyComplete
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionalCalculusLibrary\bin\Debug\PropositionLibrary.dll
-C:\Users\Gibadulin Roman\Desktop\Курсовая\Latium\PropositionalCalculusLibrary\bin\Debug\PropositionLibrary.pdb
