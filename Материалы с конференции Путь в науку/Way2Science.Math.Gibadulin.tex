@@ -1,0 +1,98 @@
+\documentclass[14pt, a4paper]{extbook}
+\usepackage{amsfonts}
+\usepackage[cp1251]{inputenc}
+\usepackage{mathtext}  
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[russian]{babel}
+\usepackage[body={14cm, 22.7cm},left= 3.53cm, top=3.53cm]{geometry}
+
+\usepackage{indentfirst}
+
+
+\usepackage[]{graphicx}
+ 
+\usepackage{floatflt}
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+%Document
+\begin{document}
+
+\begin{center}
+\textbf{\large Алгоритм поиска вывода в Исчислении Высказываний и его программная реализация}
+
+\textit{\textbf{Гибадулин Р.А. (ЯрГУ им. П.Г. Демидова, Ярославль)}}
+
+\textit{Научный руководитель: д-р физ.-мат. наук, профессор Дурнев В.Г. }
+\end{center}
+
+\textit{Цель работы:} разработать и реализовать алгоритм, который по заданной  выводимой формуле Исчисления Высказываний находит её вывод в Исчислении Высказываний.
+
+В данной работе рассматривается Исчисление Высказываний, определения которого можно найти, например, в пособии[1].
+
+Предлагается следующий алгоритм поиска вывода выводимой формулы $\mathcal{A}$:
+
+\begin{algorithmic}[1]
+	\ForAll{$\mathcal{B}$ - подформула формулы $\mathcal{A}$}
+		\State добавить в множество $\mathit{F}$ формулу $\mathcal{B}$ 
+	\EndFor
+	\While{вывод не найден}
+		\ForAll{$\mathcal{B} \in \mathit{F}$}
+			\If{формулу $\mathcal{B}$ можно добавить в конец вывода $\mathcal{D}$}
+				\State добавить $\mathcal{B}$ в конец вывода $\mathcal{D}$
+				\If{$\mathcal{B}$ совпадает с  $\mathcal{A}$}
+					\State завершить выполнение алгоритма
+				\EndIf
+			\EndIf
+		\EndFor
+		\State $ \mathit{F}' \gets \emptyset $
+		\ForAll {$(\mathcal{B}_1,\mathcal{B}_2,\mathcal{B}_3) \in \mathit{F}^3$}
+			\ForAll {$\mathcal{B}$ - формула из списка аксиом}
+				\State
+				\parbox[t]{\dimexpr\linewidth-\algorithmicindent}{произвести одновременную замену переменых $\mathit{A}, \mathit{B}, \mathit{C}$ в формуле $\mathcal{B}$ на формулы $\mathcal{B}_1,\mathcal{B}_2,\mathcal{B}_3$ соответственно, и полученную формулу добавить в множество $ \mathit{F}' $}
+			\EndFor
+		\EndFor
+		\State $ \mathit{F} \gets \mathit{F} \cup \mathit{F}' $
+	\EndWhile		
+\end{algorithmic}
+По завершении работы алгоритма $\mathcal{D}$ - искомый вывод.
+
+Алгоритм реализовывался на языке C\# версии 7.0. При реализации использовались методы параллельного программирования [2], а именно цикл добавления формул в вывод и цикл замены переменных в аксиомах выполняются в разных потоках.
+
+В результате может получиться вывод, содержащий большое число формул, но не все из них необходимы для вывода конечной формулы. Поэтому необходимо упростить вывод: 
+\newpage
+\begin{algorithmic}[1]
+	\State $\mathcal{D}$ - исходный вывод, $\mathcal{D}'$ - новый пустой вывод	
+	\State $ \mathcal{A} $ - последняя формула вывода $\mathcal{D}$
+	\State \Call{AddFormula}{$ \mathcal{A} $}
+	\Procedure{AddFormula}{формула $ \mathcal{A} $}
+	\If{$ \mathcal{A} $ - не аксиома}	
+	\State 
+	\parbox[t]{\dimexpr\linewidth-\algorithmicindent}{ $ \mathcal{A} $ получена из формул $ \mathcal{B} $, $ \mathcal{C} $, которые принадлежат выводу $\mathcal{D}$, по правилу \textit{\textbf{MP}}}
+	\State \Call{AddFormula}{$ \mathcal{B} $}
+	\State \Call{AddFormula}{$ \mathcal{C} $}
+	\EndIf	
+	\State добавить $ \mathcal{A} $ в конец вывода $\mathcal{D}'$	
+	\EndProcedure
+\end{algorithmic}
+По завершении работы алгоритма $\mathcal{D}'$ - сокращенный вывод.
+
+Написанная и отлаженная автором компьютерная программа нашла выводы формул $ (\mathcal{A} \to (\mathcal{B} \to \mathcal{A}) ), \; (\mathcal{A} \to \mathcal{A})$, а для формулы $((\mathcal{A} \vee \mathcal{A})\to \mathcal{A})$ были найдены три различных вывода, два из них являются совершенно новыми.
+
+Также в ходе выполнения этой работы были решены задачи:\newline
+1.	Разработать и реализовать алгоритм, который по строке символов определяет, является ли она формулой.\newline
+2.	Разработать и реализовать способ представления формул в памяти компьютера.\newline
+3.	Разработать и реализовать алгоритм, который по формуле определяет, является ли она аксиомой.\newline
+4.	Дать оценку количеству элементов множества $\mathit{F}$ после $n$ итераций цикла while.\newline
+5.	Разработать и реализовать алгоритм, который по заданной  выводимой из множества гипотез $ \Gamma $ формуле находит её вывод  из множества гипотез $ \Gamma $.\newline
+6.	Реализовать способ удобного ввода формул: ввод пропозициональных связок и индексов переменных.
+\begin{center}
+{\small \bf Литература}
+\end{center}
+
+[1] Дурнев, В.Г. Элементы теории множеств и математической логики: учеб. пособие / В. Г. Дурнев;  Яросл. гос. ун-т. им. П. Г. Демидова. - Ярославль,  2009. 457 с.  
+
+[2]	Якимова, О. П. Языки программирования. Ч.2: лабораторный практикум / О. П. Якимова, И. М. Якимов, В. Л. Дольников; Яросл. гос. ун-т им. П. Г. Демидова. - Ярославль : ЯрГУ, 2012 — 56 с. 
+
+\end{document}
