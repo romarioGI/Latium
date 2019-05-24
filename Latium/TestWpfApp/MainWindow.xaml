@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:TestWpfApp"
         xmlns:propositionalCalculusTextBox="clr-namespace:PropositionalCalculusTextBox;assembly=PropositionalCalculusTextBox"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Latium" Height="530" Width="1000">
     <Grid>
-        <propositionalCalculusTextBox:PropositionalCalculusTextBox x:Name="InferenceTextBox" HorizontalAlignment="Left" Height="326" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="772" IsReadOnly="True" FontSize="20"/>
-        <propositionalCalculusTextBox:PropositionalCalculusTextBox x:Name="InputFormulaTextBox" HorizontalAlignment="Left" Height="68" Margin="10,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="542" FontSize="20"/>
-        <Button x:Name="PushButton" Content="Push" HorizontalAlignment="Left" Margin="557,341,0,0" VerticalAlignment="Top" Width="225" Height="68" Click="PushButton_Click"/>
+        <propositionalCalculusTextBox:PropositionalCalculusTextBox x:Name="InferenceTextBox" HorizontalAlignment="Left" Height="408" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="973" IsReadOnly="True" FontSize="20"/>
+        <propositionalCalculusTextBox:PropositionalCalculusTextBox x:Name="InputFormulaTextBox" HorizontalAlignment="Left" Height="68" Margin="10,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="743" FontSize="20"/>
+        <Button x:Name="PushButton" Content="Найти вывод" HorizontalAlignment="Left" Margin="758,423,0,0" VerticalAlignment="Top" Width="225" Height="68" Click="PushButton_Click" FontSize="28"/>
 
     </Grid>
 </Window>

@@ -75,6 +75,10 @@ namespace PropositionalCalculusLibrary
 
         private MpFormula FindMpPair(Formula formula)
         {
+            /*
+             * так как в алгоритме добавляется много аксиом, то вывод растет быстро, а значит стоит всё таки оптимизирвать поиск МПпары
+             * либо нужно убедиться, что HashSet.First() работает быстро
+             */
             foreach (var fB in _inferenceSet.Keys)
             {
                 if (fB.TopConnective is Implication == false)

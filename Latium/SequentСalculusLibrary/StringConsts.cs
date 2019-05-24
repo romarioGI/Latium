@@ -30,7 +30,7 @@
         public string ConjunctionIntroduction => "Conjunction introduction";
         public string ConjunctionRemoving => "Conjunction removing";
 
-        public string LineEnd => "\n\r";
+        public string LineEnd => "\r\n";
     }
 
     public class RussianStringConstants : IStringConstants
@@ -38,6 +38,6 @@
         public string ConjunctionIntroduction => "Введение конъюнкции";
         public string ConjunctionRemoving => "Удалению конъюнкции";
 
-        public string LineEnd => "\n\r";
+        public string LineEnd => "\r\n";
     }
 }

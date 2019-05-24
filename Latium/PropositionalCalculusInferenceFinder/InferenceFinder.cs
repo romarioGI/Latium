@@ -43,7 +43,7 @@ namespace PropositionalCalculusInferenceFinder
             {
                 lock (inference)
                 {
-                    if (inference.Push(target))
+                    if (inference.Push(target) || inference.Contains(target))
                     {
                         break;
                     }

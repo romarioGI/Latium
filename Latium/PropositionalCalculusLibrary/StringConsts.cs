@@ -70,7 +70,7 @@
         public string IsHypothesis => "; hypothesis";
         public string IsMpFormula => "; MP ";
 
-        public string LineEnd => "\n\r";
+        public string LineEnd => "\r\n";
     }
 
     public class RussianStringConstants : IStringConstants
@@ -92,7 +92,7 @@
         public string IsHypothesis => "; гипотеза";
         public string IsMpFormula => "; MP ";
 
-        public string LineEnd => "\n\r";
+        public string LineEnd => "\r\n";
 
     }
 }
