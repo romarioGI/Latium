@@ -141,6 +141,7 @@ namespace PropositionalCalculusLibrary
             var newInference = new Inference(Hypotheses);
             newInference.DfsPush(LastFormula);
             _inferenceSet = newInference._inferenceSet;
+            Length = newInference.Length;
         }
 
         private void DfsPush(Formula formula)
